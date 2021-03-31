@@ -8,15 +8,14 @@ class BinaryTree:
   def __init__(self):
     self.root = None
 
-  def inOrder(self):
-    self.inOrder(self.root)
-
-  def inOrder(self, t):
+  def inOrder(self, t='first'):
+    if(t == 'first'):
+      t = self.root
     if(t):
       self.inOrder(t.left)
       print(t.data,end = " ")
       self.inOrder(t.right)
-    else: return
+    return
 
   def insert(self, data):
     new_node = Node(data)
